@@ -1,0 +1,100 @@
+.detailContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .characterDetails {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-family: Verdana, 'PT Sans', sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Aplicar un filtro de desenfoque al fondo */
+    background-color: rgba(147, 49, 49, 0.3); /* Color de fondo semi-transparente */
+  }
+  
+  /* Efecto de animación constante para las líneas */
+  .characterDetails::before,
+  .characterDetails::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #7f0000; /* Color de la línea */
+    transition: all 2s linear infinite; /* Animación constante durante 2 segundos */
+    bottom: 0;
+    transform-origin: left; /* Establece el origen de la transformación a la izquierda */
+  }
+  
+  .characterDetails::before {
+    left: -100%; /* Inicia fuera de la carta */
+    animation: lineAnimationLeft 4s linear infinite; /* Animación hacia la izquierda */
+  }
+  
+  .characterDetails::after {
+    right: -100%; /* Inicia fuera de la carta */
+    animation: lineAnimationRight 4s linear infinite; /* Animación hacia la derecha */
+  }
+  
+  @keyframes lineAnimationLeft {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  @keyframes lineAnimationRight {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  /* Aplicar efectos a cada letra */
+  .characterDetails h2 {
+    display: block; /* Mostrar elementos h2 en bloque */
+    position: relative;
+    animation: letterAnimation 2s linear infinite;
+    margin-bottom: 10px; /* Espacio entre palabras */
+  }
+  
+  @keyframes letterAnimation {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-5px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+
+  
+

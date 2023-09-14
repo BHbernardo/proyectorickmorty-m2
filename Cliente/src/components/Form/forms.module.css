@@ -1,0 +1,206 @@
+.title {
+  font-size: 34px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 20px; /* Ajusta el margen superior para dar espacio adicional */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Tu-Fuente-Aquí', sans-serif;
+  z-index: 2;
+}
+/* Efecto de animación constante para el título */
+.title::before,
+.title::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff; /* Color de la línea */
+  animation: lineAnimation 4s linear infinite; /* Animación constante durante 4 segundos */
+  bottom: 0;
+}
+.title::before {
+  left: 0;
+}
+.title::after {
+  right: 0;
+}
+/* Aplicar el efecto a cada letra individual */
+.title::before:nth-child(1),
+.title::after:nth-child(1) {
+  width: 0; /* Inicialmente, las líneas están ocultas */
+  animation-delay: 0s; /* Sin demora en la animación */
+}
+.title::before:nth-child(2),
+.title::after:nth-child(2) {
+  width: 0;
+  animation-delay: 0.2s; /* Demora de 0.2 segundos */
+}
+.title::before:nth-child(3),
+.title::after:nth-child(3) {
+  width: 0;
+  animation-delay: 0.4s; /* Demora de 0.4 segundos */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+  max-width: 300px;
+  margin: 20px auto; /* Ajusta el margen superior para dar espacio adicional */
+  padding: 60px;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+/* Efecto de animación constante */
+@keyframes lineAnimation {
+  0%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  animation: lineAnimation 4s linear infinite;
+}
+.container::before {
+  top: 0;
+}
+.container::after {
+  bottom: 0;
+}
+.label {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000000;
+  font-family: 'Tu-Fuente-Aquí', sans-serif;
+}
+.input {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #4c2020;
+  border-radius: 5px;
+  background-color: transparent; /* Hacer el fondo transparente */
+  color: #000000;
+  transition: border-color 0.6s ease;
+  position: relative; /* Importante para el posicionamiento de los pseudo-elementos */
+  overflow: hidden; /* Para ocultar las líneas que se desbordan */
+}
+/* Efecto de animación constante para los campos de entrada */
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+  50% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+.input::before,
+.input::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #007B7F; /* Color de la línea */
+  animation: lineAnimation 2s linear infinite; /* Animación constante durante 4 segundos */
+}
+
+.input::before {
+  left: 0;
+  bottom: 0;
+}
+
+.input::after {
+  right: 0;
+  bottom: 0;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+/* Evitar que el cursor se convierta en un texto al pasar el mouse por encima */
+.input:hover {
+  cursor: default;
+}
+  .submitButton {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 20px;
+    border: 2px solid #000000; /* Cambia a un borde en lugar de fondo */
+    background-color: transparent; /* Fondo transparente */
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* Importante para el posicionamiento de los pseudo-elementos */
+    overflow: hidden; /* Para ocultar las líneas que se desbordan */
+    z-index: 2;
+  }
+  
+  /* Efecto al hacer hover en el botón */
+  .submitButton::before,
+  .submitButton::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #e8d2d2; /* Color de la línea */
+    transition: all 0.3s ease;
+  }
+  .submitButton::before {
+    left: 0;
+    top: 0;
+  }
+  .submitButton::after {
+    right: 0;
+    bottom: 0;
+  }
+  .submitButton:hover::before {
+    width: 100%;
+  }
+  .submitButton:hover::after {
+    width: 100%;
+  }
+  .bod {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambia de 'center' a 'flex-start' para moverlo un poco más arriba */
+    height: 100vh;
+    margin: 0;
+    padding-top: 180px; /* Añade un poco de espacio en la parte superior */
+  }
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px; /* Espacio interior alrededor del contenedor */
+    background: transparent; /* Fondo transparente o difuminado si lo deseas */
+  }

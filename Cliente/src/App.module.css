@@ -1,0 +1,16 @@
+:root{
+   background-image: url(../public/rickAndMortyBackground.png);
+   background-color: rgba(0, 0, 0, 0.5); 
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   padding: 0px;
+}
+
+.App {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   /* color:whitesmoke; */  
+}
+
