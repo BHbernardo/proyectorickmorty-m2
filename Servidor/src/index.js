@@ -10,9 +10,15 @@
 // }).listen(3001);
 
 const server = require('./app');
+const { conn } = require('./DB_connection');
 const PORT = 3001;
-    
-server.listen(PORT, () => {
-  console.log(`Servidor montado en ${PORT}`);
+
+
+conn.sync({force: true}).then(() =>{ 
+  server.listen(PORT, () => {
+    console.log(`Servidor montado en ${PORT}`);
+  });
 });
+// conectamos nuestra BASE DE DATOS con el SERVIDOR y su PUERTO de manera sincronica;
+    
 
